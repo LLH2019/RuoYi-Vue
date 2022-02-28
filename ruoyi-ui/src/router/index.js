@@ -150,7 +150,8 @@ export const constantRoutes = [
         meta: { title: '修改生成配置', activeMenu: '/tool/gen' }
       }
     ]
-  }
+  },
+  
 ]
 
 export default new Router({

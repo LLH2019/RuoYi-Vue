@@ -18,21 +18,39 @@ create table sys_dept (
   update_by         varchar(64)     default ''                 comment '更新者',
   update_time       datetime                                   comment '更新时间',
   primary key (dept_id)
-) engine=innodb auto_increment=200 comment = '部门表';
+) engine=innodb auto_increment=200 comment = '部门表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-部门表数据
 -- ----------------------------
-insert into sys_dept values(100,  0,   '0',          '若依科技',   0, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(101,  100, '0,100',      '深圳总公司', 1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(102,  100, '0,100',      '长沙分公司', 2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(103,  101, '0,100,101',  '研发部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(104,  101, '0,100,101',  '市场部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(105,  101, '0,100,101',  '测试部门',   3, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(106,  101, '0,100,101',  '财务部门',   4, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(107,  101, '0,100,101',  '运维部门',   5, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(108,  102, '0,100,102',  '市场部门',   1, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
-insert into sys_dept values(109,  102, '0,100,102',  '财务部门',   2, '若依', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(100,  0,   '0',          '安徽省XX有限公司',   0, 'ZZ', '15888888888', 'er@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(101,  100, '0,100',      '合肥总公司', 1, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(102,  100, '0,100',      '上海分公司', 2, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(103,  101, '0,100,101',  '研发部门',   1, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(104,  101, '0,100,101',  '市场部门',   2, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(105,  101, '0,100,101',  '测试部门',   3, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(106,  101, '0,100,101',  '财务部门',   4, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(107,  101, '0,100,101',  '运维部门',   5, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(108,  102, '0,100,102',  '市场部门',   1, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(109,  102, '0,100,102',  '财务部门',   2, 'ZZ', '15888888888', 'ry@qq.com', '0', '0', 'admin', sysdate(), '', null);
+
+
+insert into sys_dept values(200,  0,   '0',          '哈尔滨市XX有限公司',   1, 'ZZ', '15888888888', '9305682@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(201,  200, '0,200',      '生产制造部', 1, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(202,  200, '0,200',      '物资供应部', 2, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(203,  200, '0,200',      '物资管理部', 3, 'ZZ', '15888888888', 'tt@qq.com', '0', '0', 'admin', sysdate(), '', null);
+
+
+insert into sys_dept values(300,  0,   '0',          '宁波市XX有限公司',   2, 'ZZ', '15888888888', '9305682@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(301,  300, '0,300',      '生产制造部', 1, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(302,  300, '0,300',      '物资供应部', 2, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(303,  300, '0,300',      '物资管理部', 3, 'ZZ', '15888888888', 'tt@qq.com', '0', '0', 'admin', sysdate(), '', null);
+
+insert into sys_dept values(400,  0,   '0',          '杭州市XX有限公司',   3, 'ZZ', '15888888888', '9305682@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(401,  400, '0,400',      '生产制造部', 1, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(402,  400, '0,400',      '物资供应部', 2, 'ZZ', '15888888888', 'ss@qq.com', '0', '0', 'admin', sysdate(), '', null);
+insert into sys_dept values(403,  400, '0,400',      '物资管理部', 3, 'ZZ', '15888888888', 'tt@qq.com', '0', '0', 'admin', sysdate(), '', null);
+
 
 
 -- ----------------------------
@@ -60,13 +78,13 @@ create table sys_user (
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
   primary key (user_id)
-) engine=innodb auto_increment=100 comment = '用户信息表';
+) engine=innodb auto_increment=100 comment = '用户信息表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-用户信息表数据
 -- ----------------------------
-insert into sys_user values(1,  103, 'admin', '若依', '00', 'ry@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '管理员');
-insert into sys_user values(2,  105, 'ry',    '若依', '00', 'ry@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '测试员');
+insert into sys_user values(1,  103, 'admin', '张三', '00', '932425@163.com', '15888888888', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '管理员');
+insert into sys_user values(2,  105, 'ry',    '李四', '00', '3436466@qq.com',  '15666666666', '1', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', sysdate(), 'admin', sysdate(), '', null, '测试员');
 
 
 -- ----------------------------
@@ -86,7 +104,7 @@ create table sys_post
   update_time   datetime                                   comment '更新时间',
   remark        varchar(500)    default null               comment '备注',
   primary key (post_id)
-) engine=innodb comment = '岗位信息表';
+) engine=innodb comment = '岗位信息表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-岗位信息表数据
@@ -117,7 +135,7 @@ create table sys_role (
   update_time          datetime                                   comment '更新时间',
   remark               varchar(500)    default null               comment '备注',
   primary key (role_id)
-) engine=innodb auto_increment=100 comment = '角色信息表';
+) engine=innodb auto_increment=100 comment = '角色信息表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-角色信息表数据
@@ -151,16 +169,24 @@ create table sys_menu (
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default ''                 comment '备注',
   primary key (menu_id)
-) engine=innodb auto_increment=2000 comment = '菜单权限表';
+) engine=innodb auto_increment=2000 comment = '菜单权限表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-菜单信息表数据
 -- ----------------------------
 -- 一级菜单
-insert into sys_menu values('1', '系统管理', '0', '1', 'system',           null, '', 1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, '系统管理目录');
-insert into sys_menu values('2', '系统监控', '0', '2', 'monitor',          null, '', 1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, '系统监控目录');
-insert into sys_menu values('3', '系统工具', '0', '3', 'tool',             null, '', 1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, '系统工具目录');
-insert into sys_menu values('4', '若依官网', '0', '4', 'http://ruoyi.vip', null, '', 0, 0, 'M', '0', '0', '', 'guide',    'admin', sysdate(), '', null, '若依官网地址');
+insert into sys_menu values('1', '系统管理',     '0', '1', 'system',      null, '', 1, 0, 'M', '0', '0', '', 'system',   'admin', sysdate(), '', null, '系统管理目录');
+insert into sys_menu values('2', '系统监控',     '0', '2', 'monitor',     null, '', 1, 0, 'M', '0', '0', '', 'monitor',  'admin', sysdate(), '', null, '系统监控目录');
+insert into sys_menu values('3', '系统工具',     '0', '3', 'tool',        null, '', 1, 0, 'M', '0', '0', '', 'tool',     'admin', sysdate(), '', null, '系统工具目录');
+insert into sys_menu values('4', '制造资源管理',  '0', '4', 'druid',      null, '', 1, 0, 'M', '0', '0', '', 'druid',  'admin', sysdate(), '', null, '制造资源管理目录');
+insert into sys_menu values('5', '订单管理',     '0', '5', 'icon',      null, '', 1, 0, 'M', '0', '0', '', 'icon',    'admin', sysdate(), '', null, '订单管理目录');
+insert into sys_menu values('6', '制造任务管理',  '0', '6', 'chart',     null, '', 1, 0, 'M', '0', '0', '', 'chart', 'admin', sysdate(), '', null, '制造任务管理目录');
+insert into sys_menu values('7', 'Agent管理',    '0', '7', 'code',        null, '', 1, 0, 'M', '0', '0', '', 'code',    'admin', sysdate(), '', null, 'Agent管理目录');
+insert into sys_menu values('8', '企业信息管理',  '0', '8', 'color',     null, '', 1, 0, 'M', '0', '0', '', 'color',  'admin', sysdate(), '', null, '企业信息管理');
+
+insert into sys_menu values('8', '产品数据管理',  '0', '8', 'color',     null, '', 1, 0, 'M', '0', '0', '', 'color',  'admin', sysdate(), '', null, '产品数据管理');
+
+
 -- 二级菜单
 insert into sys_menu values('100',  '用户管理', '1',   '1', 'user',       'system/user/index',        '', 1, 0, 'C', '0', '0', 'system:user:list',        'user',          'admin', sysdate(), '', null, '用户管理菜单');
 insert into sys_menu values('101',  '角色管理', '1',   '2', 'role',       'system/role/index',        '', 1, 0, 'C', '0', '0', 'system:role:list',        'peoples',       'admin', sysdate(), '', null, '角色管理菜单');
@@ -179,6 +205,30 @@ insert into sys_menu values('113',  '缓存监控', '2',   '5', 'cache',      'm
 insert into sys_menu values('114',  '表单构建', '3',   '1', 'build',      'tool/build/index',         '', 1, 0, 'C', '0', '0', 'tool:build:list',         'build',         'admin', sysdate(), '', null, '表单构建菜单');
 insert into sys_menu values('115',  '代码生成', '3',   '2', 'gen',        'tool/gen/index',           '', 1, 0, 'C', '0', '0', 'tool:gen:list',           'code',          'admin', sysdate(), '', null, '代码生成菜单');
 insert into sys_menu values('116',  '系统接口', '3',   '3', 'swagger',    'tool/swagger/index',       '', 1, 0, 'C', '0', '0', 'tool:swagger:list',       'swagger',       'admin', sysdate(), '', null, '系统接口菜单');
+insert into sys_menu values('240',  '制造资源', '4',   '1', 'list',      'resource/list/index',       '', 1, 0, 'C', '0', '0', 'resource:list',           'build',         'admin', sysdate(), '', null, '资源列表');
+insert into sys_menu values('241',  '生产情况', '4',   '2', 'produce',   'resource/produce/index',    '', 1, 0, 'C', '0', '0', 'resource:produce',        'build',         'admin', sysdate(), '', null, '生产情况');
+insert into sys_menu values('250',  '订单管理', '5',   '1', 'order',     'order/manager/index',       '', 1, 0, 'C', '0', '0', 'order:manager',           'build',         'admin', sysdate(), '', null, '订单管理');
+insert into sys_menu values('251',  '生产展示', '5',   '2', 'show',     'order/show/index',          '', 1, 0, 'C', '0', '0', 'order:show',              'build',         'admin', sysdate(), '', null, '订单展示');
+insert into sys_menu values('260',  '制造任务', '6',   '1', 'list',      'task/list/index',           '', 1, 0, 'C', '0', '0', 'task:list',               'build',         'admin', sysdate(), '', null, '任务情况');
+insert into sys_menu values('261',  '任务详情', '6',   '2', 'detail',    'task/detail/index',         '', 1, 0, 'C', '0', '0', 'task:detail',             'build',         'admin', sysdate(), '', null, '任务详情');
+insert into sys_menu values('262',  '工序管理', '6',   '3', 'process',   'task/process/index',        '', 1, 0, 'C', '0', '0', 'task:process',            'build',         'admin', sysdate(), '', null, '工序管理');
+insert into sys_menu values('270',  'agent列表','7',   '1', 'agent',   'agent/list/index',           '', 1, 0, 'C', '0', '0', 'agent:list',              'build',         'admin', sysdate(), '', null, 'agent列表');
+insert into sys_menu values('280',  '企业列表', '8',   '1', 'list',   'enterprise/list/index',        '', 1, 0, 'C', '0', '0', 'enterprise:list',         'build',         'admin', sysdate(), '', null, '企业信息列表');
+
+
+insert into sys_menu values('271',  '实时调度agent',    '7',   '2', 'dispatch',   'agent/dispatch/index',       '', 1, 0, 'C', '0', '0', 'agent:dispatch',       'build',         'admin', sysdate(), '', null, '实时调度agent');
+insert into sys_menu values('272',  '监测agent',       '7',   '3', 'monitor',    'agent/monitor/index',        '', 1, 0, 'C', '0', '0', 'agent:monitor',         'build',         'admin', sysdate(), '', null, '监测agent');
+insert into sys_menu values('273',  '制造任务池agent',  '7',   '4', 'pool',       'agent/pool/index',           '', 1, 0, 'C', '0', '0', 'agent:pool',            'build',         'admin', sysdate(), '', null, '制造任务池agent');
+insert into sys_menu values('274',  '制造任务agent',    '7',   '5', 'task',       'agent/task/index',           '', 1, 0, 'C', '0', '0', 'agent:task',            'build',         'admin', sysdate(), '', null, '制造任务agent列表');
+insert into sys_menu values('275',  '制造资源agent',    '7',   '6', 'resource',   'agent/resource/index',       '', 1, 0, 'C', '0', '0', 'agent:resource',        'build',         'admin', sysdate(), '', null, '制造资源agent列表');
+
+
+#
+# insert into sys_menu values('2000', '新闻', '0', '1', 'news', NULL, NULL, '1', '0', 'M', '0', '0', NULL, 'component', 'admin', '2021-12-10 16:36:09', '', NULL, '');
+# insert into sys_menu values('2001', '新闻列表', '2000', '1', 'list', 'news/list/index', NULL, '1', '0', 'C', '0', '0', 'news:list', 'education', 'admin', '2021-12-10 16:37:27', '', NULL, '');
+
+
+
 -- 三级菜单
 insert into sys_menu values('500',  '操作日志', '108', '1', 'operlog',    'monitor/operlog/index',    '', 1, 0, 'C', '0', '0', 'monitor:operlog:list',    'form',          'admin', sysdate(), '', null, '操作日志菜单');
 insert into sys_menu values('501',  '登录日志', '108', '2', 'logininfor', 'monitor/logininfor/index', '', 1, 0, 'C', '0', '0', 'monitor:logininfor:list', 'logininfor',    'admin', sysdate(), '', null, '登录日志菜单');
@@ -265,7 +315,7 @@ create table sys_user_role (
   user_id   bigint(20) not null comment '用户ID',
   role_id   bigint(20) not null comment '角色ID',
   primary key(user_id, role_id)
-) engine=innodb comment = '用户和角色关联表';
+) engine=innodb comment = '用户和角色关联表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-用户和角色关联表数据
@@ -282,7 +332,7 @@ create table sys_role_menu (
   role_id   bigint(20) not null comment '角色ID',
   menu_id   bigint(20) not null comment '菜单ID',
   primary key(role_id, menu_id)
-) engine=innodb comment = '角色和菜单关联表';
+) engine=innodb comment = '角色和菜单关联表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-角色和菜单关联表数据
@@ -380,7 +430,7 @@ create table sys_role_dept (
   role_id   bigint(20) not null comment '角色ID',
   dept_id   bigint(20) not null comment '部门ID',
   primary key(role_id, dept_id)
-) engine=innodb comment = '角色和部门关联表';
+) engine=innodb comment = '角色和部门关联表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-角色和部门关联表数据
@@ -399,7 +449,7 @@ create table sys_user_post
   user_id   bigint(20) not null comment '用户ID',
   post_id   bigint(20) not null comment '岗位ID',
   primary key (user_id, post_id)
-) engine=innodb comment = '用户与岗位关联表';
+) engine=innodb comment = '用户与岗位关联表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-用户与岗位关联表数据
@@ -430,7 +480,7 @@ create table sys_oper_log (
   error_msg         varchar(2000)   default ''                 comment '错误消息',
   oper_time         datetime                                   comment '操作时间',
   primary key (oper_id)
-) engine=innodb auto_increment=100 comment = '操作日志记录';
+) engine=innodb auto_increment=100 comment = '操作日志记录' DEFAULT CHARSET=utf8;
 
 
 -- ----------------------------
@@ -450,7 +500,7 @@ create table sys_dict_type
   remark           varchar(500)    default null               comment '备注',
   primary key (dict_id),
   unique (dict_type)
-) engine=innodb auto_increment=100 comment = '字典类型表';
+) engine=innodb auto_increment=100 comment = '字典类型表' DEFAULT CHARSET=utf8;
 
 insert into sys_dict_type values(1,  '用户性别', 'sys_user_sex',        '0', 'admin', sysdate(), '', null, '用户性别列表');
 insert into sys_dict_type values(2,  '菜单状态', 'sys_show_hide',       '0', 'admin', sysdate(), '', null, '菜单状态列表');
@@ -485,7 +535,7 @@ create table sys_dict_data
   update_time      datetime                                   comment '更新时间',
   remark           varchar(500)    default null               comment '备注',
   primary key (dict_code)
-) engine=innodb auto_increment=100 comment = '字典数据表';
+) engine=innodb auto_increment=100 comment = '字典数据表' DEFAULT CHARSET=utf8;
 
 insert into sys_dict_data values(1,  1,  '男',       '0',       'sys_user_sex',        '',   '',        'Y', '0', 'admin', sysdate(), '', null, '性别男');
 insert into sys_dict_data values(2,  2,  '女',       '1',       'sys_user_sex',        '',   '',        'N', '0', 'admin', sysdate(), '', null, '性别女');
@@ -533,7 +583,7 @@ create table sys_config (
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
   primary key (config_id)
-) engine=innodb auto_increment=100 comment = '参数配置表';
+) engine=innodb auto_increment=100 comment = '参数配置表' DEFAULT CHARSET=utf8;
 
 insert into sys_config values(1, '主框架页-默认皮肤样式名称',     'sys.index.skinName',            'skin-blue',     'Y', 'admin', sysdate(), '', null, '蓝色 skin-blue、绿色 skin-green、紫色 skin-purple、红色 skin-red、黄色 skin-yellow' );
 insert into sys_config values(2, '用户管理-账号初始密码',         'sys.user.initPassword',         '123456',        'Y', 'admin', sysdate(), '', null, '初始化密码 123456' );
@@ -557,7 +607,7 @@ create table sys_logininfor (
   msg            varchar(255)   default ''                comment '提示消息',
   login_time     datetime                                 comment '访问时间',
   primary key (info_id)
-) engine=innodb auto_increment=100 comment = '系统访问记录';
+) engine=innodb auto_increment=100 comment = '系统访问记录' DEFAULT CHARSET=utf8;
 
 
 -- ----------------------------
@@ -579,7 +629,7 @@ create table sys_job (
   update_time         datetime                                 comment '更新时间',
   remark              varchar(500)  default ''                 comment '备注信息',
   primary key (job_id, job_name, job_group)
-) engine=innodb auto_increment=100 comment = '定时任务调度表';
+) engine=innodb auto_increment=100 comment = '定时任务调度表' DEFAULT CHARSET=utf8;
 
 insert into sys_job values(1, '系统默认（无参）', 'DEFAULT', 'ryTask.ryNoParams',        '0/10 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
 insert into sys_job values(2, '系统默认（有参）', 'DEFAULT', 'ryTask.ryParams(\'ry\')',  '0/15 * * * * ?', '3', '1', '1', 'admin', sysdate(), '', null, '');
@@ -600,7 +650,7 @@ create table sys_job_log (
   exception_info      varchar(2000)  default ''                 comment '异常信息',
   create_time         datetime                                  comment '创建时间',
   primary key (job_log_id)
-) engine=innodb comment = '定时任务调度日志表';
+) engine=innodb comment = '定时任务调度日志表' DEFAULT CHARSET=utf8;
 
 
 -- ----------------------------
@@ -619,7 +669,7 @@ create table sys_notice (
   update_time       datetime                                   comment '更新时间',
   remark            varchar(255)    default null               comment '备注',
   primary key (notice_id)
-) engine=innodb auto_increment=10 comment = '通知公告表';
+) engine=innodb auto_increment=10 comment = '通知公告表' DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- 初始化-公告信息表数据
@@ -654,7 +704,7 @@ create table gen_table (
   update_time       datetime                                   comment '更新时间',
   remark            varchar(500)    default null               comment '备注',
   primary key (table_id)
-) engine=innodb auto_increment=1 comment = '代码生成业务表';
+) engine=innodb auto_increment=1 comment = '代码生成业务表' DEFAULT CHARSET=utf8;
 
 
 -- ----------------------------
@@ -685,4 +735,4 @@ create table gen_table_column (
   update_by         varchar(64)     default ''                 comment '更新者',
   update_time       datetime                                   comment '更新时间',
   primary key (column_id)
-) engine=innodb auto_increment=1 comment = '代码生成业务表字段';
+) engine=innodb auto_increment=1 comment = '代码生成业务表字段' DEFAULT CHARSET=utf8;
