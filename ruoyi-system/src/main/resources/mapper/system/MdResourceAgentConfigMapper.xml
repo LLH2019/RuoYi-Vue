@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.MdResourceAgentConfigMapper">
+    
+    <resultMap type="MdResourceAgentConfig" id="MdResourceAgentConfigResult">
+        <result property="id"    column="id"    />
+        <result property="agentid"    column="agentId"    />
+        <result property="agentname"    column="agentName"    />
+        <result property="startt"    column="startt"    />
+        <result property="suspendt"    column="suspendt"    />
+        <result property="continuet"    column="continuet"    />
+        <result property="endt"    column="endt"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectMdResourceAgentConfigVo">
+        select id, agentId, agentName, startt, suspendt, continuet, endt, create_by, create_time, update_by, update_time from md_resource_agent_config
+    </sql>
+
+    <select id="selectMdResourceAgentConfigList" parameterType="MdResourceAgentConfig" resultMap="MdResourceAgentConfigResult">
+        <include refid="selectMdResourceAgentConfigVo"/>
+        <where>  
+            <if test="agentid != null  and agentid != ''"> and agentId = #{agentid}</if>
+            <if test="agentname != null  and agentname != ''"> and agentName like concat('%', #{agentname}, '%')</if>
+            <if test="startt != null  and startt != ''"> and startt = #{startt}</if>
+            <if test="suspendt != null  and suspendt != ''"> and suspendt = #{suspendt}</if>
+            <if test="continuet != null  and continuet != ''"> and continuet = #{continuet}</if>
+            <if test="endt != null  and endt != ''"> and endt = #{endt}</if>
+        </where>
+    </select>
+    
+    <select id="selectMdResourceAgentConfigById" parameterType="Long" resultMap="MdResourceAgentConfigResult">
+        <include refid="selectMdResourceAgentConfigVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMdResourceAgentConfig" parameterType="MdResourceAgentConfig" useGeneratedKeys="true" keyProperty="id">
+        insert into md_resource_agent_config
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="agentid != null">agentId,</if>
+            <if test="agentname != null">agentName,</if>
+            <if test="startt != null">startt,</if>
+            <if test="suspendt != null">suspendt,</if>
+            <if test="continuet != null">continuet,</if>
+            <if test="endt != null">endt,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="agentid != null">#{agentid},</if>
+            <if test="agentname != null">#{agentname},</if>
+            <if test="startt != null">#{startt},</if>
+            <if test="suspendt != null">#{suspendt},</if>
+            <if test="continuet != null">#{continuet},</if>
+            <if test="endt != null">#{endt},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMdResourceAgentConfig" parameterType="MdResourceAgentConfig">
+        update md_resource_agent_config
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="agentid != null">agentId = #{agentid},</if>
+            <if test="agentname != null">agentName = #{agentname},</if>
+            <if test="startt != null">startt = #{startt},</if>
+            <if test="suspendt != null">suspendt = #{suspendt},</if>
+            <if test="continuet != null">continuet = #{continuet},</if>
+            <if test="endt != null">endt = #{endt},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMdResourceAgentConfigById" parameterType="Long">
+        delete from md_resource_agent_config where id = #{id}
+    </delete>
+
+    <delete id="deleteMdResourceAgentConfigByIds" parameterType="String">
+        delete from md_resource_agent_config where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

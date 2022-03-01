@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.MdResourceMapper">
+    
+    <resultMap type="MdResource" id="MdResourceResult">
+        <result property="id"    column="id"    />
+        <result property="resourceid"    column="resourceId"    />
+        <result property="resourcename"    column="resourceName"    />
+        <result property="agent"    column="agent"    />
+        <result property="company"    column="company"    />
+        <result property="workshop"    column="workshop"    />
+        <result property="type"    column="type"    />
+        <result property="scale"    column="scale"    />
+        <result property="state"    column="state"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="connect"    column="connect"    />
+    </resultMap>
+
+    <sql id="selectMdResourceVo">
+        select id, resourceId, resourceName, agent, company, workshop, type, scale, state, create_by, create_time, update_by, update_time, connect from md_resource
+    </sql>
+
+    <select id="selectMdResourceList" parameterType="MdResource" resultMap="MdResourceResult">
+        <include refid="selectMdResourceVo"/>
+        <where>  
+            <if test="resourceid != null  and resourceid != ''"> and resourceId = #{resourceid}</if>
+            <if test="resourcename != null  and resourcename != ''"> and resourceName like concat('%', #{resourcename}, '%')</if>
+            <if test="agent != null  and agent != ''"> and agent = #{agent}</if>
+            <if test="company != null  and company != ''"> and company = #{company}</if>
+            <if test="workshop != null  and workshop != ''"> and workshop = #{workshop}</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="scale != null  and scale != ''"> and scale = #{scale}</if>
+            <if test="state != null  and state != ''"> and state = #{state}</if>
+            <if test="connect != null "> and connect = #{connect}</if>
+        </where>
+    </select>
+    
+    <select id="selectMdResourceById" parameterType="Long" resultMap="MdResourceResult">
+        <include refid="selectMdResourceVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMdResource" parameterType="MdResource" useGeneratedKeys="true" keyProperty="id">
+        insert into md_resource
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="resourceid != null">resourceId,</if>
+            <if test="resourcename != null">resourceName,</if>
+            <if test="agent != null">agent,</if>
+            <if test="company != null">company,</if>
+            <if test="workshop != null">workshop,</if>
+            <if test="type != null">type,</if>
+            <if test="scale != null">scale,</if>
+            <if test="state != null">state,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="connect != null">connect,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="resourceid != null">#{resourceid},</if>
+            <if test="resourcename != null">#{resourcename},</if>
+            <if test="agent != null">#{agent},</if>
+            <if test="company != null">#{company},</if>
+            <if test="workshop != null">#{workshop},</if>
+            <if test="type != null">#{type},</if>
+            <if test="scale != null">#{scale},</if>
+            <if test="state != null">#{state},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="connect != null">#{connect},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMdResource" parameterType="MdResource">
+        update md_resource
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="resourceid != null">resourceId = #{resourceid},</if>
+            <if test="resourcename != null">resourceName = #{resourcename},</if>
+            <if test="agent != null">agent = #{agent},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="workshop != null">workshop = #{workshop},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="scale != null">scale = #{scale},</if>
+            <if test="state != null">state = #{state},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="connect != null">connect = #{connect},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMdResourceById" parameterType="Long">
+        delete from md_resource where id = #{id}
+    </delete>
+
+    <delete id="deleteMdResourceByIds" parameterType="String">
+        delete from md_resource where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

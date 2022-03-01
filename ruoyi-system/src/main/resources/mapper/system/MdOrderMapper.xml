@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.MdOrderMapper">
+    
+    <resultMap type="MdOrder" id="MdOrderResult">
+        <result property="id"    column="id"    />
+        <result property="orderid"    column="orderId"    />
+        <result property="graphnumber"    column="graphNumber"    />
+        <result property="ordername"    column="orderName"    />
+        <result property="modeltype"    column="modelType"    />
+        <result property="state"    column="state"    />
+        <result property="deliverytime"    column="deliveryTime"    />
+        <result property="demandnumber"    column="demandNumber"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectMdOrderVo">
+        select id, orderId, graphNumber, orderName, modelType, state, deliveryTime, demandNumber, create_by, create_time, update_by, update_time from md_order
+    </sql>
+
+    <select id="selectMdOrderList" parameterType="MdOrder" resultMap="MdOrderResult">
+        <include refid="selectMdOrderVo"/>
+        <where>  
+            <if test="orderid != null  and orderid != ''"> and orderId = #{orderid}</if>
+            <if test="graphnumber != null  and graphnumber != ''"> and graphNumber = #{graphnumber}</if>
+            <if test="ordername != null  and ordername != ''"> and orderName like concat('%', #{ordername}, '%')</if>
+            <if test="modeltype != null  and modeltype != ''"> and modelType = #{modeltype}</if>
+            <if test="state != null  and state != ''"> and state = #{state}</if>
+            <if test="deliverytime != null  and deliverytime != ''"> and deliveryTime = #{deliverytime}</if>
+            <if test="demandnumber != null  and demandnumber != ''"> and demandNumber = #{demandnumber}</if>
+        </where>
+    </select>
+    
+    <select id="selectMdOrderById" parameterType="Long" resultMap="MdOrderResult">
+        <include refid="selectMdOrderVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMdOrder" parameterType="MdOrder" useGeneratedKeys="true" keyProperty="id">
+        insert into md_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderid != null">orderId,</if>
+            <if test="graphnumber != null">graphNumber,</if>
+            <if test="ordername != null">orderName,</if>
+            <if test="modeltype != null">modelType,</if>
+            <if test="state != null">state,</if>
+            <if test="deliverytime != null">deliveryTime,</if>
+            <if test="demandnumber != null">demandNumber,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderid != null">#{orderid},</if>
+            <if test="graphnumber != null">#{graphnumber},</if>
+            <if test="ordername != null">#{ordername},</if>
+            <if test="modeltype != null">#{modeltype},</if>
+            <if test="state != null">#{state},</if>
+            <if test="deliverytime != null">#{deliverytime},</if>
+            <if test="demandnumber != null">#{demandnumber},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMdOrder" parameterType="MdOrder">
+        update md_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="orderid != null">orderId = #{orderid},</if>
+            <if test="graphnumber != null">graphNumber = #{graphnumber},</if>
+            <if test="ordername != null">orderName = #{ordername},</if>
+            <if test="modeltype != null">modelType = #{modeltype},</if>
+            <if test="state != null">state = #{state},</if>
+            <if test="deliverytime != null">deliveryTime = #{deliverytime},</if>
+            <if test="demandnumber != null">demandNumber = #{demandnumber},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMdOrderById" parameterType="Long">
+        delete from md_order where id = #{id}
+    </delete>
+
+    <delete id="deleteMdOrderByIds" parameterType="String">
+        delete from md_order where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
